@@ -23,7 +23,7 @@ func (s *ApiTestSuite) SetupSuite() {
 	// wait few secs for the server to init
 	time.Sleep(15 * time.Second)
 
-	s.UrlEndpoint = "http://localhost:1317"
+	s.UrlEndpoint = "http://localhost:31317"
 }
 
 func (s *ApiTestSuite) TearDownSuite() {

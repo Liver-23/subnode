@@ -29,7 +29,7 @@ func (s *GrpcTestSuite) SetupSuite() {
 	// wait few secs for the server to init
 	time.Sleep(15 * time.Second)
 
-	s.UrlEndpoint = "localhost:9090"
+	s.UrlEndpoint = "localhost:39090"
 
 	var Bech32PrefixAccAddr = "osmo"
 	if Chain == "evmos" {

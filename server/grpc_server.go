@@ -73,7 +73,7 @@ func (m *GrpcServer) StartGrpcServer() {
 	}
 
 	m.grpcServer = grpc.NewServer(grpc.UnknownServiceHandler(proxy.TransparentHandler(director)))
-	lis, err := net.Listen("tcp", ":9090")
+	lis, err := net.Listen("tcp", ":39090")
 	if err != nil {
 		panic(err)
 	}

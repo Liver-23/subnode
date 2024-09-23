@@ -96,7 +96,7 @@ func (m *ApiServer) StartApiServer() {
 	serverMux := http.NewServeMux()
 	serverMux.HandleFunc("/", handler)
 	go func() {
-		m.apiServer = &http.Server{Addr: ":1317", Handler: serverMux}
+		m.apiServer = &http.Server{Addr: ":31317", Handler: serverMux}
 		log.Fatal(m.apiServer.ListenAndServe())
 	}()
 }

@@ -25,7 +25,7 @@ func (s *RpcTestSuite) SetupSuite() {
 	// wait few secs for the server to init
 	time.Sleep(15 * time.Second)
 
-	s.UrlEndpoint = "http://localhost:26657"
+	s.UrlEndpoint = "http://localhost:36657"
 }
 
 func (s *RpcTestSuite) TearDownSuite() {
@@ -333,7 +333,7 @@ func (s *RpcTestSuite) TestRpc_status() {
 	//      "moniker": "test",
 	//      "other": {
 	//        "tx_index": "on",
-	//        "rpc_address": "tcp://0.0.0.0:26657"
+	//        "rpc_address": "tcp://0.0.0.0:36657"
 	//      }
 	//    },
 	//    "sync_info": {

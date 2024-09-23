@@ -22,7 +22,7 @@ func Eth_BathRequest(w http.ResponseWriter, jsonBody []byte) {
 	var arrRes = make([]json.RawMessage, arrSize)
 
 	for i, s := range arr {
-		bodyChild, err := utils.FetchJsonRpcOverHttp("http://localhost:8545", s)
+		bodyChild, err := utils.FetchJsonRpcOverHttp("http://localhost:38545", s)
 		if err != nil {
 			_ = utils.SendError(w)
 			return

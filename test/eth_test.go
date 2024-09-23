@@ -28,7 +28,7 @@ func (s *EthTestSuite) SetupSuite() {
 	// wait few secs for the server to init
 	time.Sleep(15 * time.Second)
 
-	s.UrlEndpoint = "http://localhost:8545"
+	s.UrlEndpoint = "http://localhost:38545"
 }
 
 func (s *EthTestSuite) TearDownSuite() {

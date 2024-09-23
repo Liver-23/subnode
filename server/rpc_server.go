@@ -316,8 +316,8 @@ func (m *RpcServer) StartRpcServer() {
 	serverMux := http.NewServeMux()
 	serverMux.HandleFunc("/", handler)
 	go func() {
-		//log.Fatal(http.ListenAndServe(":26657", serverMux))
-		m.rpcServer = &http.Server{Addr: ":26657", Handler: serverMux}
+		//log.Fatal(http.ListenAndServe(":36657", serverMux))
+		m.rpcServer = &http.Server{Addr: ":36657", Handler: serverMux}
 		log.Fatal(m.rpcServer.ListenAndServe())
 
 	}()
