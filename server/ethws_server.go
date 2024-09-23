@@ -129,7 +129,7 @@ func (m *EthWsServer) wsServerHandle(wsConServer *websocket.Conn, wsConClient *w
 			var arrRes = make([]json.RawMessage, arrSize)
 
 			for i, s := range arr {
-				bodyChild, err := utils.FetchJsonRpcOverHttp("http://localhost:38545", s)
+				bodyChild, err := utils.FetchJsonRpcOverHttp("http://localhost:39545", s)
 				if err != nil {
 					errMsg := m.getWsJsonRpcErr(s, err)
 					arrRes[i] = errMsg
@@ -211,7 +211,7 @@ func (m *EthWsServer) StartEthWsServer() {
 	serverMux := http.NewServeMux()
 	serverMux.HandleFunc("/", handler)
 	go func() {
-		m.ethWsServer = &http.Server{Addr: ":38546", Handler: serverMux}
+		m.ethWsServer = &http.Server{Addr: ":39546", Handler: serverMux}
 		log.Fatal(m.ethWsServer.ListenAndServe())
 
 	}()
@@ -247,7 +247,7 @@ func (m *EthWsServer) sendWsRpcResponseErr(wsConServer *websocket.Conn, err erro
 
 func (m *EthWsServer) processSingleMsg(wsConServer *websocket.Conn, serverChannel chan []byte, rpcReq *types.RPCRequest, jsonRaw []byte) {
 	if rpcReq.Method != "eth_subscribe" && rpcReq.Method != "eth_unsubscribe" {
-		res, err := utils.FetchJsonRpcOverHttp("http://localhost:38545", jsonRaw)
+		res, err := utils.FetchJsonRpcOverHttp("http://localhost:39545", jsonRaw)
 		if err != nil {
 			_ = m.sendWsRpcResponseErr(wsConServer, err)
 			return

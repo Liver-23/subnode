@@ -240,7 +240,7 @@ func (m *EthServer) StartEthServer() {
 	serverMux := http.NewServeMux()
 	serverMux.HandleFunc("/", handler)
 	go func() {
-		m.ethServer = &http.Server{Addr: ":38545", Handler: serverMux}
+		m.ethServer = &http.Server{Addr: ":39545", Handler: serverMux}
 		log.Fatal(m.ethServer.ListenAndServe())
 	}()
 }
